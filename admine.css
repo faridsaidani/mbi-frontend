@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -16,31 +16,29 @@ li {
 }
 
 :root {
-  --Montserrat: 'Montserrat';
+  --Montserrat: "Montserrat";
 
-  --light: #1E1B6D;
-  --blue: #3C91E6;
-  --light-blue: #CFE8FF;
+  --light: #1e1b6d;
+  --blue: #3c91e6;
+  --light-blue: #cfe8ff;
   --grey: #eee;
-  --dark-grey: #AAAAAA;
-  --dark: #342E37;
-  --red: #DB504A;
-  --yellow: #FFCE26;
-  --light-yellow: #FFF2C6;
-  --orange: #FD7238;
-  --light-orange: #FFE0D3;
-
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
 }
 
 html {
   overflow-x: hidden;
 }
 
-
 body.dark {
-  --light: #0C0C1E;
+  --light: #0c0c1e;
   --grey: #060714;
-  --dark: #FBFBFB;
+  --dark: #fbfbfb;
 }
 
 body {
@@ -48,10 +46,6 @@ body {
   overflow-x: hidden;
   block-size: 100vh;
 }
-
-
-
-
 
 /* SIDEBAR */
 #sidebar {
@@ -63,7 +57,7 @@ body {
   background: var(--light);
   z-index: 2000;
   font-family: var(--lato);
-  transition: .3s ease;
+  transition: 0.3s ease;
   overflow-x: hidden;
   scrollbar-width: none;
   color: #f3f3f3;
@@ -118,7 +112,7 @@ body {
 }
 
 #sidebar .side-menu li.active::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 40px;
@@ -130,7 +124,7 @@ body {
 }
 
 #sidebar .side-menu li.active::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 40px;
@@ -156,13 +150,13 @@ body {
 }
 
 #sidebar .side-menu.top li.active a {
-  color: #1E1B6D;
+  color: #1e1b6d;
   background-color: #f3f3f3;
 }
 
 #sidebar.hide .side-menu li a {
   width: calc(48px - (4px * 2));
-  transition: width .3s ease;
+  transition: width 0.3s ease;
 }
 
 #sidebar .side-menu li a.logout {
@@ -181,26 +175,19 @@ body {
 
 /* SIDEBAR */
 
-
-
 /* CONTENT */
 #content {
   position: relative;
   width: calc(100% - 280px);
   left: 280px;
-  transition: .3s ease;
+  transition: 0.3s ease;
   block-size: 100vh;
 }
 
-#sidebar.hide~#content {
+#sidebar.hide ~ #content {
   width: calc(100% - 60px);
   left: 60px;
 }
-
-
-
-
-
 
 /* NAVBAR */
 #content nav {
@@ -218,7 +205,7 @@ body {
 }
 
 #content nav::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 40px;
@@ -239,7 +226,7 @@ body {
 
 #content nav .nav-link {
   font-size: 16px;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 #content nav .nav-link:hover {
@@ -325,7 +312,7 @@ body {
 }
 
 #content nav .switch-mode::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 2px;
   left: 2px;
@@ -333,18 +320,14 @@ body {
   width: calc(25px - 4px);
   background: var(--blue);
   border-radius: 50%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-#content nav #switch-mode:checked+.switch-mode::before {
+#content nav #switch-mode:checked + .switch-mode::before {
   left: calc(100% - (25px - 4px) - 2px);
 }
 
 /* NAVBAR */
-
-
-
-
 
 /* MAIN */
 #content main {
@@ -358,12 +341,10 @@ body {
   block-size: 100vh;
 }
 
-
 .search-container {
   width: 25%;
   display: flex;
   margin-bottom: 20px;
-
 }
 
 /* CSS Styles */
@@ -410,13 +391,11 @@ body {
   cursor: pointer;
 }
 
-
 .main-skills {
   display: flex;
   margin-top: 20px;
   height: 58%;
   width: 100%;
-
 }
 
 #more-blog {
@@ -429,20 +408,15 @@ body {
   margin-right: 10%;
   margin-bottom: 5%;
   font-family: var(--Montserrat);
-
-
 }
-#more-blog button{
+#more-blog button {
   margin-bottom: 10%;
 }
 #more-blog a {
-  
   margin-right: 10%;
   font-family: var(--Montserrat);
 
   font-size: large;
-
-
 }
 
 .main-skills #cou {
@@ -455,7 +429,6 @@ body {
   overflow-x: hidden;
   white-space: nowrap;
   position: relative;
-
 }
 
 /* Hide the default arrows */
@@ -478,11 +451,8 @@ body {
   color: #007bff;
 }
 
-
-
 #cou .subcou {
-
-  color: #1E1B6D;
+  color: #1e1b6d;
   width: 40%;
   margin-left: 2%;
   background: var(--grey);
@@ -492,22 +462,18 @@ body {
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.208);
   display: inline-block;
   /* Ensure child elements are displayed in a line */
-
 }
 
 #cou #blogk {
   position: relative;
-
 }
 
 .image-overlay {
-
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-
 }
 
 .image-overlay img {
@@ -529,22 +495,16 @@ body {
   margin-left: 50%;
   top: 10%;
 
-  text-shadow: 0 10px 20px #1E1B6D;
-
-
+  text-shadow: 0 10px 20px #1e1b6d;
 }
 
 .text-container h2 {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
-
-
 
 #bloginfo {
   position: relative;
   box-sizing: 20%;
-
-
 }
 
 #bloginfo .bb {
@@ -554,24 +514,23 @@ body {
 }
 
 #cou button {
-
   margin-right: 10%;
   padding: 10px 16px;
   border: none;
   border-radius: 5px;
-  background-color: #1E1B6D;
+  background-color: #1e1b6d;
   color: #ffffff;
   cursor: pointer;
 }
 
 #cou button:hover {
-  background-color: #407BFF;
+  background-color: #407bff;
 }
 
 #cou2 {
   width: 35%;
   margin: 10px;
-  background: #1E1B6D;
+  background: #1e1b6d;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.518);
@@ -583,7 +542,7 @@ body {
 }
 
 .subcou2 {
-  color: #1E1B6D;
+  color: #1e1b6d;
   padding: 50px;
   background: rgb(255, 255, 255);
   text-align: center;
@@ -591,7 +550,6 @@ body {
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.63);
   padding-bottom: 15%;
 }
-
 
 /* Courses */
 .main-course {
@@ -623,7 +581,6 @@ body {
 }
 
 .box h3 {
-
   margin-top: 18px;
 }
 
@@ -646,8 +603,6 @@ body {
   margin: 20px 20px 50px 50px;
 }
 
-
-
 /*Attendance List section  */
 #addUser {
   padding-bottom: 20px;
@@ -656,12 +611,10 @@ body {
 }
 
 #addUser input::placeholder {
-
-  color: #1E1B6D;
+  color: #1e1b6d;
 }
 
 .attendance {
-
   margin-left: 2%;
   margin-top: 20px;
   text-transform: capitalize;
@@ -670,7 +623,6 @@ body {
 }
 
 .attendance-list {
-
   width: 95%;
   padding: 10px;
   margin-top: 20px;
@@ -689,7 +641,6 @@ body {
 }
 
 .table {
-
   border-collapse: collapse;
   margin: 25px 0;
 
@@ -700,8 +651,7 @@ body {
 }
 
 table thead tr {
-
-  color: #1E1B6D;
+  color: #1e1b6d;
   background: hsl(209, 43%, 80%);
   text-align: left;
   font-weight: bold;
@@ -716,14 +666,12 @@ table thead tr {
   border-bottom: 1px solid #ddd;
 }
 
-
-
 .table button {
   padding: 6px 20px;
   border-radius: 10px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #1E1B6D;
+  border: 1px solid #1e1b6d;
 }
 
 .table button:hover {
@@ -733,7 +681,6 @@ table thead tr {
 }
 
 /*the setting section*/
-
 
 #set {
   background-color: #f3f3f3;
@@ -752,9 +699,6 @@ table thead tr {
   block-size: 5cm;
   width: 95%;
   border-radius: 10px;
-
-
-
 }
 
 .sett:nth-child(2) {
@@ -768,7 +712,7 @@ table thead tr {
 .sett h3 {
   margin-top: 1%;
   margin-left: 2%;
-  color: #493EEB;
+  color: #493eeb;
 }
 
 .sett form {
@@ -790,8 +734,6 @@ table thead tr {
   border-radius: 10px;
   padding: 8px;
   width: 50%;
-
-
 }
 
 .sett form ::placeholder {
@@ -799,48 +741,38 @@ table thead tr {
 }
 
 .sett form .sav {
-
   margin-left: 0%;
   width: 80px;
   cursor: pointer;
-  background-color: #493EEB;
+  background-color: #493eeb;
   color: #000000;
-
 }
 
 .sett form .sav:hover {
   color: #ffffff;
-  background-color: #1E1B6D;
+  background-color: #1e1b6d;
   transition: 0.2s;
-
 }
-
-
 
 #i3 p {
   font-family: var(--Montserrat);
   font-size: 12px;
   margin-top: -3%;
   margin-left: 20px;
-
 }
 
 #i3 button {
-
   font-family: var(--Montserrat);
   border-radius: 15px;
   height: 30px;
   width: 80px;
   cursor: pointer;
-  background-color: #493EEB;
-
-
+  background-color: #493eeb;
 }
 
 #i3 button:hover {
-
-  background-color: #1E1B6D;
-  color: #D8E8F5;
+  background-color: #1e1b6d;
+  color: #d8e8f5;
   transition: 0.2s;
 }
 
@@ -851,7 +783,6 @@ table thead tr {
   block-size: 16cm;
   border-radius: 25px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.188);
-
 }
 
 .dropdown {
@@ -859,7 +790,7 @@ table thead tr {
 }
 
 .dropdown button {
-  background-color: #1E1B6D;
+  background-color: #1e1b6d;
   color: rgb(255, 255, 255);
   margin-top: 10px;
   margin-left: 10px;
@@ -880,10 +811,9 @@ table thead tr {
   margin-left: 10px;
   display: none;
   position: absolute;
-  background-color: #407BFF;
+  background-color: #407bff;
   min-width: 100px;
   box-shadow: 2px 2px 5px rgb(39, 35, 35);
-
 }
 
 .dropdown:hover .content {
@@ -891,8 +821,7 @@ table thead tr {
 }
 
 .dropdown a:hover {
-
-  background-color: #493EEB;
+  background-color: #493eeb;
 }
 
 .program-section {
@@ -900,20 +829,15 @@ table thead tr {
   display: inline;
 
   max-height: 80%;
-
-
 }
 
-
-#languagesList ,#ActivityList {
-
+#languagesList,
+#ActivityList {
   display: grid;
   column-gap: 50px;
   grid-template-columns: auto auto auto;
   max-height: 800px;
   overflow-y: scroll;
-
-
 }
 
 .language-item {
@@ -937,7 +861,6 @@ table thead tr {
   padding: 20px;
   background-color: #d8d8e6;
   margin: 2%;
-
 }
 
 .language-item img {
@@ -951,7 +874,6 @@ table thead tr {
 .language-item span {
   margin-right: 30px;
   font-size: larger;
-
 }
 
 .delete-btn {
@@ -961,12 +883,8 @@ table thead tr {
   background-color: #ffffff00;
 }
 
-
-
-
-
 .details-btn {
-  background-color: #1E90FF;
+  background-color: #1e90ff;
   /* Adjust button color as needed */
   color: #fff;
   padding: 5px 10px;
@@ -979,15 +897,12 @@ table thead tr {
 }
 
 .details-btn:hover {
-  background-color: #0077FF;
+  background-color: #0077ff;
   /* Adjust button color on hover as needed */
 }
 
-
 .Students_det {
   position: relative;
-
-
 }
 
 .file {
@@ -1015,15 +930,12 @@ table thead tr {
 }
 
 .file #claass {
-
   margin-top: 10%;
   background-color: #fff;
   width: 400px;
   block-size: 400px;
   box-shadow: 0 0px 25px rgba(0, 0, 0, 0.36);
   border-radius: 10px;
-
-
 }
 
 /*user infromation*/
@@ -1039,7 +951,6 @@ table thead tr {
 }
 
 .userinf {
-
   padding: 50px;
   width: 30%;
   height: 100%;
@@ -1051,8 +962,7 @@ table thead tr {
 }
 
 .userinf h3 {
-  font-family: 'Montserrat';
-
+  font-family: "Montserrat";
 }
 
 .userinf input {
@@ -1061,10 +971,9 @@ table thead tr {
   border-radius: 30px;
   width: 120%;
   height: 10%;
-  background-color: #A1C6E8;
+  background-color: #a1c6e8;
   border-color: #ffffff00;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.241);
-
 }
 
 #paidcourses {
@@ -1077,19 +986,7 @@ table thead tr {
   position: absolute;
 }
 
-
-
-
-
 /* CONTENT */
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 768px) {
   #sidebar {
@@ -1105,11 +1002,6 @@ table thead tr {
     display: none;
   }
 }
-
-
-
-
-
 
 @media screen and (max-width: 576px) {
   #content nav form .form-input input {
@@ -1137,8 +1029,8 @@ table thead tr {
     background: var(--red);
   }
 
-  #content nav form.show~.notification,
-  #content nav form.show~.profile {
+  #content nav form.show ~ .notification,
+  #content nav form.show ~ .profile {
     display: none;
   }
 
@@ -1156,5 +1048,33 @@ table thead tr {
 
   #content main .table-data .todo .todo-list {
     min-width: 420px;
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

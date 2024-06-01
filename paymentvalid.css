@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #1E1B6D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.hero{
+    height: 5vh;
+    width: 100%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px ;
+
+}
+nav ul li a {
+    font-weight: bold;
+    color: #1E1B6D;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: #493EEB;
+}
+nav button{
+    background-color: #493EEB;
+    color: #f3f3f3;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+nav button:hover{
+    background-color:#f3f3f3 ;
+    border: 2px solid #493EEB;
+    color: #493EEB;
+}
+
+.hy{
+    color: #493EEB;
+}
+
+.midle{
+    background-color: #f3f3f3;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    margin: 20%;
+    min-height: 480px;
+
+}
+
+.midle {
+    /* display: flex; */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Set the height of the container to full viewport height */
+}
+
+.midle img {
+    width: 300px;
+}
+
+.midle img{
+    /* align-items: center; */
+    width: 300px;
+
+}
+
+.midle h2 {
+    margin-left: 13%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.midle button a{
+    background-color: #47B587;
+    color: #f3f3f3;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    cursor: pointer;
+    margin-left: 5%;
+}
+.midle button a :hover{
+    background-color:#fff;
+    border: 2px solid #47B587;
+    color: #47B587;
+}
+div{
+    margin-bottom:  10%;
+    margin-top: 0;
+    margin-left: 5px;
+}
+

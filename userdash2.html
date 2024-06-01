@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="photo/logo11.png">
+	<!-- icons -->
+	<script src="https://kit.fontawesome.com/62a2566edd.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="Admin.css">
+	
+	<title>Dashboard</title>
+</head>
+
+<body>
+
+
+	<section id="sidebar">
+		<a href="#" class="brand">
+            <img src="logoblanc.png">
+			<span class="text">MBI</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="dashboarduser.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			
+			<a href="#" class="profile">
+				<img src="profil pic.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Settings</a>
+						</li>
+					</ul>
+				</div>
+            </div>
+        </main>
+
+		<!-- MAIN -->
+		<main>
+            
+			<div class="container1">
+               <div class="mini-bar">
+                 <h1>Settings</h1>
+                 <p class="colorful">Personal information</p>
+                 <p>Password</p>
+               </div>
+               <div class="form-side">
+                 <div class="profil-pic">
+                      <input  type="image" src="profil pic.png" alt="Profile Picture">
+                 </div>
+                 <div class="personalinfo">
+                      <h1>Personal information</h1>
+                     <form class="form">
+                         <input type="text" id="1name" class="1name" placeholder="First-name">
+                         <input type="text" id="2name" class="2name" placeholder="Last name">
+                         <input type="email" id="email" class="email" placeholder="Email">
+                         <input type="tel"  id=" tel"class="tel" placeholder="tel" placeholder="phone number">
+                         <!-- <input type="submit" id="btn" class="btn-save" value="save"> -->
+                         <input type="submit" class="btnn-save" value="Save">
+                         <!-- <button class="btn-save">Save</button> -->
+                     </form>
+                  </div>
+
+                  <div class="passwordside">
+                    <h1>Password</h1>
+					<form>
+                    <input type="password" id="password" class="password" placeholder="Current password">
+                    <input type="password" id="password" class="password" placeholder="New password">
+                    <input type="password" id="password" class="password" placeholder="Retype password">
+                    <!-- <input type="submit" id="btn" class="btn-save" value="save"> -->
+                    <input type="submit" class="btnn-save" value="Save">
+                  </div>
+				</form>
+
+               </div>
+               </div>
+            </div>
+	   </main>
+		
+  	</section>
+	
+	  <script src="Admin.js"></script>
+
+	
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "admin-dashbord",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "axios": {
+      "version": "0.21.1",
+      "resolved": "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz",
+      "integrity": "sha512-+q0B0h8UWtY4pU3m8L0d7V0fz7b8e5uJ9+8x9z3Gj1BzL0Kb0w8v8X8Pv5l+Z1/5gj1JgU8Zb7l9D0f9e0fD7g==",
+      "dev": true,
+      "requires": {
+        "follow-redirects": "^1.10.0"
+      }
+    }
+  },
+  "type": "module"
+}

@@ -1,137 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="photo/logo11.png">
-	<!-- icons -->
-	<script src="https://kit.fontawesome.com/62a2566edd.js" crossorigin="anonymous"></script>
-	
-	<!-- My CSS -->
-	<link rel="stylesheet" href="admine.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="photo/logo11.png" />
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/62a2566edd.js"
+      crossorigin="anonymous"
+    ></script>
 
-	<title>Dashboard</title>
-</head>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="admine.css" />
 
-<body>
+    <title>Dashboard</title>
+  </head>
 
+  <body>
+    <script>
+      let id = localStorage.getItem("user-id");
+      let token = localStorage.getItem("token");
+      console.log(id);
+      fetch(`http://localhost:3000/students/${id}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          let frstname = data.data.data.name;
+          let email = data.data.data.email;
+          let phone = 2136623456789;
+          console.log(data.data);
+          document.getElementById("First_name").value = frstname;
+          document.getElementById("email").value = email;
+          document.getElementById("phone_number").value = phone;
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<img src="photo/logo11.png" alt="" style="margin-left: 5%;margin-top: 5%;" >
-			<span class="text" style="margin-left: 3%;margin-top: 5%;">DashBoard</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="adminehome.html">
-					<i class="fas fa-home"></i>
-					
-					<span class="text">Home</span>
-				</a>
-			</li>
-      <li class="active">
-				<a href="admineatte.html"  style="color: #407BFF;">
-					<i class="fas fa-user"></i>
-					<span class="text">Student</span>
-				</a>
-			</li>
-      <li class="active">
-				<a href="adminelang.html">
-					<i class="fas fa-solid fa-graduation-cap"></i>
-					<span class="text">Programs</span>
-				</a>
-			</li>
-      <li class="active">
-				<a href="adminesetti.html">
-					<i class="fas fa-light fa-sliders"></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
-			
-		</ul>
-		<ul class="side-menu">
-		
-			<li>
-				<a href="#" class="logout">
-					<i class="fas fa-sign-out-alt"></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img
+          src="photo/logo11.png"
+          alt=""
+          style="margin-left: 5%; margin-top: 5%"
+        />
+        <span class="text" style="margin-left: 3%; margin-top: 5%"
+          >DashBoard</span
+        >
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="adminehome.html">
+            <i class="fas fa-home"></i>
 
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="admineatte.html" style="color: #407bff">
+            <i class="fas fa-user"></i>
+            <span class="text">Student</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="adminelang.html">
+            <i class="fas fa-solid fa-graduation-cap"></i>
+            <span class="text">Programs</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="adminesetti.html">
+            <i class="fas fa-light fa-sliders"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
 
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
 
-	<!-- CONTENT -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu' ></i>
-			
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"  onclick="searchWithinPage()"><i class="fa-solid fa-magnifying-glass"></i></button>
-				</div>
-			</form>
-			
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
-		</nav>
-		<!-- NAVBAR -->
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button
+              type="submit"
+              class="search-btn"
+              onclick="searchWithinPage()"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
 
-		<!-- MAIN -->
-		<main>
-			<section class="attendance" style="background-color: aliceblue;">
-				<form action="">
-				<div id="userinformation">
-					<div id="userimg" class="userinf" style="width: 20%;">
-						<h3>Picture</h3>
-						<input id="imgg2" type="image">
-					</div>
-					<div id="userinfo" class="userinf">
-						<h3> First name</h3>
-						<input type="text" name="First_name" id="First_name">
-						
-						<h3> Last name</h3>
-						<input type="text" name="Last_name" id="Last_name">
-						<h3> phone number</h3>
-						
-						<input type="tel" name="phone_number" id="phone_number">
-						
-						<h3> Email</h3>
-						<input type="email" name="email" id="email">
-					</div>
-					<div id="usercourses" class="userinf">
-						<h3>The purchased courses</h3>
-						<div id="paidcourses">
-                          
+        <a href="#" class="profile">
+          <img src="img/people.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
 
-						</div>
-					</div>
-				</div>
-				
-			</form>
-						
-	  
-	
-	
-					
-	
-	
-	
-					
-			</section>
+      <!-- MAIN -->
+      <main>
+        <section class="attendance" style="background-color: aliceblue">
+          <form action="">
+            <div id="userinformation">
+              <div id="userimg" class="userinf" style="width: 20%">
+                <img
+                  src="student.jpg"
+                  alt=""
+                  style="width: 200px; height: 200px; border-radius: 2em"
+                />
+              </div>
+              <div id="userinfo" class="userinf">
+                <h3>First name</h3>
+                <input type="text" name="First_name" id="First_name" />
 
-	  </main>
-		
-  	</section>
-	
-	
+                <h3>Last name</h3>
+                <input type="text" name="Last_name" id="Last_name" />
+                <h3>phone number</h3>
 
-	
-</body>
+                <input type="tel" name="phone_number" id="phone_number" />
+
+                <h3>Email</h3>
+                <input type="email" name="email" id="email" />
+              </div>
+              <div id="usercourses" class="userinf">
+                <h3>The purchased courses</h3>
+                <div id="paidcourses"></div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </main>
+    </section>
+  </body>
 </html>

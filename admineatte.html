@@ -1,159 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="photo/logo11.png" />
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/62a2566edd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="Admin.js" type="module"></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="admine.css" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="photo/logo11.png">
-	<!-- icons -->
-	<script src="https://kit.fontawesome.com/62a2566edd.js" crossorigin="anonymous"></script>
-	<!-- My CSS -->
-	<link rel="stylesheet" href="admine.css">
+    <title>Dashboard</title>
+  </head>
 
-	<title>Dashboard</title>
-</head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img
+          src="photo/logo11.png"
+          alt=""
+          style="margin-left: 5%; margin-top: 5%"
+        />
+        <span class="text" style="margin-left: 3%; margin-top: 5%"
+          >Dashboard</span
+        >
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="adminehome.html">
+            <i class="fas fa-home"></i>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="admineatte.html" style="color: #407bff">
+            <i class="fas fa-user"></i>
+            <span class="text">Student</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="adminelang.html">
+            <i class="fas fa-solid fa-graduation-cap"></i>
+            <span class="text">Programs</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="adminesetti.html">
+            <i class="fas fa-light fa-sliders"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
 
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
 
-<body>
+        <form action="#">
+          <div class="form-input">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search..."
+              style="color: black"
+            />
+            <button
+              type="submit"
+              class="search-btn"
+              onclick="searchWithinPage()"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div id="searchResults"></div>
+        </form>
 
+        <a href="#" class="profile">
+          <img src="img/people.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<img src="photo/logo11.png" alt="" style="margin-left: 5%;margin-top: 5%;">
-			<span class="text" style="margin-left: 3%;margin-top: 5%;">DashBoard</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="adminehome.html">
-					<i class="fas fa-home"></i>
+      <!-- MAIN -->
+      <main>
+        <section class="attendance">
+          <div class="attendance-list">
+            <h1>Student's list</h1>
+            <div class="table-container"></div>
+            <table class="table" id="students-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>ID</th>
+                  <th>Creation date</th>
+                  <th>Details</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div id="spinner" style="display: none; align-self: center">
+              <div class="loader"></div>
+              <script>
+                document
+                  .querySelector("body")
+                  .addEventListener("click", function (event) {
+                    if (event.target.closest(".details-button")) {
+                      event.preventDefault();
+                      let row = event.target.closest("tr");
+                      let id = row.querySelector(".id").textContent;
 
-					<span class="text">Home</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="admineatte.html" style="color: #407BFF;">
-					<i class="fas fa-user"></i>
-					<span class="text">Student</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="adminelang.html">
-					<i class="fas fa-solid fa-graduation-cap"></i>
-					<span class="text">Programs</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="adminesetti.html">
-					<i class="fas fa-light fa-sliders"></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
+                      // Store data in local storage
+                      localStorage.setItem("user-id", id);
 
-		</ul>
-		<ul class="side-menu">
+                      // Redirect to the details page
+                      window.location.href = "userfile.html";
+                    }
+                  });
+              </script>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
 
-			<li>
-				<a href="#" class="logout">
-					<i class="fas fa-sign-out-alt"></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+    <script>
+      function searchWithinPage() {
+        var input = document.getElementById("search-input").value.toUpperCase();
+        var table = document.querySelector(".students-table");
+        var rows = table.getElementsByTagName("tr");
 
-
-
-	<!-- CONTENT -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu'></i>
-
-			<form action="#">
-				<div class="form-input">
-					<input type="text" id="search-input" placeholder="Search..." style="color: black;">
-					<button type="submit" class="search-btn" onclick="searchWithinPage()" ><i
-							class="fa-solid fa-magnifying-glass"></i></button>
-				</div>
-				<div id="searchResults"></div>
-			</form>
-
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
-		</nav>
-		<!-- NAVBAR -->
-
-		<!-- MAIN -->
-		<main>
-			<section class="attendance">
-
-
-
-
-				<div class="attendance-list">
-					<h1> Student's list</h1>
-
-					<div class="table-container">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>ID</th>
-									<th>Creation date </th>
-									<th>Details</th>
-									<th>Delete</th>
-
-
-								</tr>
-
-							</thead>
-							<tbody>
-								<tr>
-									<td>bella ibtissem</td>
-									<td>58769</td>
-									<td>2024/02/12 </td>
-									<td><button><a href="userfile.html">See More</a></button></td>
-									<td><button id="Deleteuser" style="background-color: red;">Delete</button></td>
-
-
-									</td>
-								</tr>
-
-
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</section>
-
-
-
-		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
-
-	<script> function searchWithinPage() {
-			var input = document.getElementById('search-input').value.toUpperCase();
-			var table = document.querySelector('.table');
-			var rows = table.getElementsByTagName('tr');
-
-			for (var i = 0; i < rows.length; i++) {
-				var nameCell = rows[i].getElementsByTagName('td')[0]; // Assuming the name is in the first column (index 0)
-				if (nameCell) {
-					var nameText = nameCell.textContent || nameCell.innerText;
-					if (nameText.toUpperCase().indexOf(input) > -1) {
-						rows[i].style.display = '';
-					} else {
-						rows[i].style.display = 'none';
-					}
-				}
-			}
-		}</script>
-
-</body>
-
+        for (var i = 0; i < rows.length; i++) {
+          var nameCell = rows[i].getElementsByTagName("td")[0]; // Assuming the name is in the first column (index 0)
+          if (nameCell) {
+            var nameText = nameCell.textContent || nameCell.innerText;
+            if (nameText.toUpperCase().indexOf(input) > -1) {
+              rows[i].style.display = "";
+            } else {
+              rows[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

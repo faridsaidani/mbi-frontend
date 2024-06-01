@@ -1,319 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="photo/" />
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/62a2566edd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="admine.css" />
+    <!-- Include Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="photo/">
-	<!-- icons -->
-	<script src="https://kit.fontawesome.com/62a2566edd.js" crossorigin="anonymous"></script>
-	<!-- My CSS -->
-	<link rel="stylesheet" href="admine.css">
-	<!-- Include Swiper CSS -->
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Dashboard</title>
+  </head>
 
-	<title>Dashboard</title>
-</head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img
+          src="photo/logo11.png"
+          alt=""
+          style="margin-left: 5%; margin-top: 5%"
+        />
+        <span class="text" style="margin-left: 3%; margin-top: 5%"
+          >DashBoard</span
+        >
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="adminehome.html" style="color: #407bff">
+            <i class="fas fa-home"></i>
 
-<body>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="admineatte.html">
+            <i class="fas fa-user"></i>
+            <span class="text">Student</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="adminelang.html">
+            <i class="fas fa-solid fa-graduation-cap"></i>
+            <span class="text">Programs</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="adminesetti.html">
+            <i class="fas fa-light fa-sliders"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
 
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<img src="photo/logo11.png" alt="" style="margin-left: 5%;margin-top: 5%;">
-			<span class="text" style="margin-left: 3%;margin-top: 5%;">DashBoard</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="adminehome.html" style="color: #407BFF;">
-					<i class="fas fa-home"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button
+              type="submit"
+              class="search-btn"
+              onclick="searchWithinPage()"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
 
-					<span class="text">Home</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="admineatte.html">
-					<i class="fas fa-user"></i>
-					<span class="text">Student</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="adminelang.html">
-					<i class="fas fa-solid fa-graduation-cap"></i>
-					<span class="text">Programs</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="adminesetti.html">
-					<i class="fas fa-light fa-sliders"></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
+        <a href="#" class="profile">
+          <img src="img/people.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
 
-		</ul>
-		<ul class="side-menu">
+      <!-- MAIN -->
+      <main>
+        <section class="main-course">
+          <div class="course-box">
+            <div class="course">
+              <div class="box">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <h3>Total revenue</h3>
+                <br />
+                <script>
+                  fetch("http://localhost:3000/Earnings")
+                    .then((response) => response.json())
+                    .then((data) => {
+                      console.log("earnings");
+                      console.log(data);
+                      document.getElementById(
+                        "total-revenue"
+                      ).innerText = `${data.data.toFixed(1)}DZ`;
+                    })
+                    .catch((error) => {
+                      console.error(error);
+                    });
+                </script>
+                <div id="total-revenue"></div>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Total Students</h3>
+                <br />
+                <div id="">7856</div>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                <h3>Average Rating</h3>
+                <br />
+                <div id="the_calcul">
+                  <script>
+                    let token = localStorage.getItem("token");
+                    fetch("http://localhost:3000/Average-rating", {
+                      headers: {
+                        Authorization: `Bearer ${token}`,
+                      },
+                    })
+                      .then((response) => response.json())
+                      .then((data) => {
+                        document.getElementById("the_calcul").innerText =
+                          data.data.avgRating.toFixed(1);
+                      })
+                      .catch((error) => {
+                        console.error(error);
+                      });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-			<li>
-				<a href="#" class="logout">
-					<i class="fas fa-sign-out-alt"></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+        <div class="main-skills">
+          <div id="cou" class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide subcou" id="more-blog">
+                <div><h3>Upcoming events</h3></div>
+                <div>
+                  <button class="newblog" id="newblog">
+                    create another blog
+                  </button>
+                </div>
+                <div><a href="admineatte.html">See All</a></div>
+              </div>
+              <div class="swiper-slide subcou" id="blogk">
+                <div class="image-overlay">
+                  <img src="mb.png" alt="" />
+                </div>
+                <div class="text-container">
+                  <h2>Evenment</h2>
+                  <h3>jeudis de 09:00 à 13:00</h3>
+                </div>
+              </div>
 
+              <div class="swiper-slide subcou"></div>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="swiper-button-next">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+          <!-- Include Swiper JS -->
+          <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".swiper-container", {
+              slidesPerView: "auto",
+              spaceBetween: 10,
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+          </script>
 
-	<!-- CONTENT -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu'></i>
+          <div id="cou2" class="card">
+            <div class="swiper-container swiper-container-cou2">
+              <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- Add your subcou divs here -->
+                <div class="swiper-slide head">
+                  <h2 style="color: #ffffff">Reviews</h2>
+                </div>
+              </div>
+              <script>
+                fetch("http://localhost:3000/reviews", {
+                  method: "GET",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    console.log("reviews");
+                    console.log(data.data.reviews);
+                    const reviewsdata = data.data.reviews;
+                    const parentElement =
+                      document.getElementById("swiper-wrapper");
+                    reviewsdata.forEach((item, index) => {
+                      const childElement = document.createElement("div");
+                      childElement.className = `swiper-slide subcou2`;
+                      childElement.id = `user-review-${index}`;
+                      childElement.innerHTML = `
+					<div class="user-name" style="font-weight: bold;">${item.name}</div>
+					  <div class="user-review">${item.comment}</div>
+					  <div id="user-ratings-${index}" class="user-ratings"></div>
+					  <div class="user-date">${item.createdAt}</div>
+					  `;
+                      parentElement.appendChild(childElement);
 
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn" onclick="searchWithinPage()"><i
-							class="fa-solid fa-magnifying-glass"></i></button>
-				</div>
-			</form>
+                      var numberOfStars = item.rating;
+                      var ratingElement = document.getElementById(
+                        `user-ratings-${index}`
+                      );
+                      for (var i = 0; i < numberOfStars; i++) {
+                        var starElement = document.createElement("i");
+                        starElement.className = `fa fa-star`;
+                        ratingElement.appendChild(starElement);
+                      }
+                      var l = 5 - i;
+                      for (var j = 0; j < l; j++) {
+                        var starElement = document.createElement("i");
+                        starElement.className = `fa-regular fa-star`;
+                        ratingElement.appendChild(starElement);
+                      }
+                    });
+                    const childElement = document.createElement("div");
+                    childElement.innerHTML = `
+	<div class="reviews-count">${reviewsdata.length} reviews</div>
+	`;
+                    parentElement.appendChild(childElement);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+              </script>
+              <div class="swiper-scrollbar"></div>
+              <!-- Scrollbar -->
+            </div>
+          </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              var swiper = new Swiper(".swiper-container-cou2", {
+                direction: "vertical", // Set direction to vertical
+                slidesPerView: "auto", // Number of slides per view
+                spaceBetween: 20, // Adjust spacing between slides
+                scrollbar: {
+                  el: ".swiper-scrollbar", // Add scrollbar
+                  hide: false, // Show scrollbar always
+                },
+              });
+            });
+          </script>
+          <!-- Inside the <body> tag -->
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Create New Blog</h2>
+              <!-- Form elements for creating a new blog -->
+              <form id="blogForm">
+                <label for="image">Image URL:</label>
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  placeholder="Enter image URL"
+                  required
+                />
 
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
-		</nav>
-		<!-- NAVBAR -->
+                <label for="title">Title:</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Enter title"
+                  required
+                />
 
-		<!-- MAIN -->
-		<main>
-			<section class="main-course">
+                <label for="description">Description:</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Enter description"
+                  required
+                ></textarea>
 
-				<div class="course-box">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required />
 
-					<div class="course">
-						<div class="box">
-							<i class="fa-solid fa-sack-dollar"></i>
-							<h3>Total revenue</h3><br>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+          <script>
+            // JavaScript
+            document.addEventListener("DOMContentLoaded", function () {
+              // Get the modal
+              var modal = document.getElementById("modal");
 
-							<div id="">45879DZ</div>
+              // Get the button that opens the modal
+              var btn = document.getElementById("newblog");
 
-						</div>
-						<div class="box">
-							<i class="fa-solid fa-graduation-cap"></i>
-							<h3>Total Students</h3><br>
-							<div id="">7856</div>
+              // Get the <span> element that closes the modal
+              var span = document.getElementsByClassName("close")[0];
 
+              // When the user clicks the button, open the modal
+              btn.onclick = function () {
+                modal.style.display = "block";
+              };
 
-						</div>
-						<div class="box">
-							<i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-							<h3>Average Rating</h3><br>
-							<div id="the_calcul">5.6</div>
+              // When the user clicks on <span> (x), close the modal
+              span.onclick = function () {
+                modal.style.display = "none";
+              };
 
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function (event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              };
+            });
+          </script>
+          <style>
+            #blogForm {
+              display: grid;
+              grid-template-columns: 1fr 3fr;
+              grid-row-gap: 10px;
+            }
 
+            #blogForm label {
+              font-weight: bold;
+            }
 
+            #blogForm input[type="file"],
+            #blogForm input[type="text"],
+            #blogForm input[type="date"],
+            #blogForm textarea {
+              width: 100%;
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
 
-						</div>
-					</div>
-				</div>
-			</section>
+            #blogForm button[type="submit"] {
+              width: 100%;
+              padding: 10px;
+              background-color: #1e1b6d;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
 
-			<div class="main-skills">
-
-				<div id="cou" class="swiper-container">
-					<div class="swiper-wrapper">
-
-						<div class="swiper-slide subcou" id="more-blog">
-							<div><h3>Upcoming events</h3></div>
-							<div><button class="newblog" id="newblog">create another blog</button></div>
-							<div><a href="admineatte.html">See All</a></div>
-							
-							
-						</div>
-						<div class="swiper-slide subcou" id="blogk">
-                            <div class="image-overlay">
-								<img src="mb.png" alt="">
-							</div>
-							<div class="text-container">
-								<h2>Evenment</h2>
-								<h3>jeudis de 09:00 à 13:00</h3>
-						    </div>
-						   
-
-						</div>
-						
-						<div class="swiper-slide subcou"></div>
-
-					</div>
-					<div class="swiper-button-prev">
-						<i class="fas fa-chevron-left"></i>
-					</div>
-					<div class="swiper-button-next">
-						<i class="fas fa-chevron-right"></i>
-					</div>
-				</div>
-				<!-- Include Swiper JS -->
-				<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-				<!-- Initialize Swiper -->
-				<script>
-					var swiper = new Swiper('.swiper-container', {
-						slidesPerView: 'auto',
-						spaceBetween: 10,
-						navigation: {
-							nextEl: '.swiper-button-next',
-							prevEl: '.swiper-button-prev',
-						},
-					});
-				</script>
-
-				<div id="cou2" class="card">
-					<div class="swiper-container swiper-container-cou2">
-						<div class="swiper-wrapper">
-							<!-- Add your subcou divs here -->
-							<div class="swiper-slide head">
-								<h2 style="color: #ffffff;">Reviwes</h2>
-							</div>
-							<div class="swiper-slide subcou2">
-								
-							</div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-							<div class="swiper-slide subcou2"></div>
-
-
-
-
-							<!-- Add more subcou divs as needed -->
-						</div>
-						<div class="swiper-scrollbar"></div> <!-- Scrollbar -->
-					</div>
-				</div>
-				<script>
-					document.addEventListener("DOMContentLoaded", function () {
-						var swiper = new Swiper(".swiper-container-cou2", {
-							direction: "vertical", // Set direction to vertical
-							slidesPerView: "auto", // Number of slides per view
-							spaceBetween: 20, // Adjust spacing between slides
-							scrollbar: {
-								el: ".swiper-scrollbar", // Add scrollbar
-								hide: false, // Show scrollbar always
-							},
-						});
-					});
-				</script>
-				<!-- Inside the <body> tag -->
-				<div id="modal" class="modal">
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<h2>Create New Blog</h2>
-						<!-- Form elements for creating a new blog -->
-						<form id="blogForm">
-							<label for="image">Image URL:</label>
-							<input type="file" id="image" name="image" placeholder="Enter image URL" required>
-
-							<label for="title">Title:</label>
-							<input type="text" id="title" name="title" placeholder="Enter title" required>
-
-							<label for="description">Description:</label>
-							<textarea id="description" name="description" placeholder="Enter description"
-								required></textarea>
-
-							
-
-							<label for="date">Date:</label>
-							<input type="date" id="date" name="date" required>
-
-							<button type="submit">Submit</button>
-						</form>
-					</div>
-				</div>
-				<script>// JavaScript
-					document.addEventListener("DOMContentLoaded", function () {
-						// Get the modal
-						var modal = document.getElementById("modal");
-
-						// Get the button that opens the modal
-						var btn = document.getElementById("newblog");
-
-						// Get the <span> element that closes the modal
-						var span = document.getElementsByClassName("close")[0];
-
-						// When the user clicks the button, open the modal
-						btn.onclick = function () {
-							modal.style.display = "block";
-						};
-
-						// When the user clicks on <span> (x), close the modal
-						span.onclick = function () {
-							modal.style.display = "none";
-						};
-
-						// When the user clicks anywhere outside of the modal, close it
-						window.onclick = function (event) {
-							if (event.target == modal) {
-								modal.style.display = "none";
-							}
-						};
-					});
-				</script>
-				<style>
-					#blogForm {
-						display: grid;
-						grid-template-columns: 1fr 3fr;
-						grid-row-gap: 10px;
-
-					}
-
-					#blogForm label {
-						font-weight: bold;
-					}
-
-					#blogForm input[type="file"],
-					#blogForm input[type="text"],
-					#blogForm input[type="date"],
-					#blogForm textarea {
-						width: 100%;
-						padding: 8px;
-						border: 1px solid #ccc;
-						border-radius: 4px;
-						box-sizing: border-box;
-					}
-
-					#blogForm button[type="submit"] {
-						width: 100%;
-						padding: 10px;
-						background-color: #1E1B6D;
-						color: white;
-						border: none;
-						border-radius: 4px;
-						cursor: pointer;
-					}
-
-					#blogForm button[type="submit"]:hover {
-						background-color: #407BFF;
-					}
-				</style>
-
-
-			</div>
-
-
-
-		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
-
-
-
-</body>
-
+            #blogForm button[type="submit"]:hover {
+              background-color: #407bff;
+            }
+          </style>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+  </body>
 </html>
