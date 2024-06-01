@@ -258,7 +258,7 @@
               >
                 <h2>Courses</h2>
                 <button
-                  id="openCourseModalBtn"
+                  id="addCourseButton"
                   class="open-modal"
                   data-section="courses"
                 >
@@ -284,6 +284,145 @@
                 </table>
               </div>
             </section>
+            <div id="courseModal" class="modal">
+              <div class="modal-content">
+                <span class="close" id="courseClose">&times;</span>
+                <!-- Modal content -->
+                <form id="courseForm">
+                  <label for="courseTitle">Course Title:</label>
+                  <input
+                    type="text"
+                    id="courseTitle"
+                    name="courseTitle"
+                    required
+                  />
+
+                  <label for="courseDescription">Course Description:</label>
+                  <input
+                    type="text"
+                    id="courseDescription"
+                    name="courseDescription"
+                  />
+
+                  <label for="courseInstructor">Course Instructor:</label>
+                  <input
+                    type="text"
+                    id="courseInstructor"
+                    name="courseInstructor"
+                    required
+                  />
+
+                  <label for="coursePrice">Course Price:</label>
+                  <input
+                    type="number"
+                    id="coursePrice"
+                    name="coursePrice"
+                    required
+                  />
+
+                  <label for="courseDuration">Course Duration:</label>
+                  <input
+                    type="number"
+                    id="courseDuration"
+                    name="courseDuration"
+                    required
+                  />
+
+                  <label for="courseMaxStudents">Max Students:</label>
+                  <input
+                    type="number"
+                    id="courseMaxStudents"
+                    name="courseMaxStudents"
+                  />
+
+                  <label for="coursePhotoUrl">Course Photo URL:</label>
+                  <input
+                    type="text"
+                    id="coursePhotoUrl"
+                    name="coursePhotoUrl"
+                  />
+
+                  <label for="courseLevel">Course Level:</label>
+                  <select id="courseLevel" name="courseLevel" required>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                  </select>
+
+                  <label for="courseLanguage">Course Language:</label>
+                  <input
+                    type="text"
+                    id="courseLanguage"
+                    name="courseLanguage"
+                  />
+
+                  <input type="submit" value="Add Course" />
+                </form>
+              </div>
+            </div>
+            <script>
+              // Get the modal, button, and close button elements
+              const modall = document.getElementById("courseModal");
+              const btn = document.getElementById("addCourseButton");
+              const span = document.getElementById("courseClose");
+
+              // When the user clicks the button, open the modal
+              btn.onclick = function () {
+                modall.style.display = "block";
+              };
+
+              // When the user clicks on <span> (x), close the modal
+              span.onclick = function () {
+                modall.style.display = "none";
+              };
+
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function (event) {
+                if (event.target == modal) {
+                  modall.style.display = "none";
+                }
+              };
+
+              // When the form is submitted, log the form data
+              document
+                .getElementById("courseForm")
+                .addEventListener("submit", function (event) {
+                  event.preventDefault(); // Prevent the form from being submitted normally
+
+                  const formData = new FormData(event.target);
+                  console.log(JSON.stringify(Object.fromEntries(formData)));
+
+                  fetch("http://localhost:3000/courses", {
+                    method: "POST",
+                    headers: {
+                      Authorization: "Bearer " + token, // Add the authorization header
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      title: formData.get("courseTitle"),
+                      description: formData.get("courseDescription"),
+                      instructor: formData.get("courseInstructor"),
+                      price: formData.get("coursePrice"),
+                      duration: formData.get("courseDuration"),
+                      maxStudents: formData.get("courseMaxStudents"),
+                      photoUrl: formData.get("coursePhotoUrl"),
+                      level: formData.get("courseLevel"),
+                      language: "660c2d7d3f4da8dd281fa904",
+                    }),
+                  })
+                    .then((response) => response.json())
+                    .then((data) => {
+                      console.log("Success:", data);
+                      getCourses(); // Refresh the courses table
+                    })
+                    .catch((error) => {
+                      console.error("Error:", error);
+                    });
+                });
+            </script>
             <div id="myModal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
