@@ -2,103 +2,17 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
   <link rel="icon" type="image/png" href="photo/logo11.png">
-  <!-- icons -->
+  <!-- FontAwesome Icons -->
   <script src="https://kit.fontawesome.com/62a2566edd.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="blog.css">
-  <!-- Link Swiper's CSS -->
+  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="blog.css">
 </head>
-<style>
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-slide {
-    position: relative;
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 30px;
-    background-color: #407cff3f;
-  }
-
-  .swiper-slide .image-overlay {
-
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-  }
-
-  .image-overlay::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.701), rgb(255, 255, 255));
-    border-top-left-radius: 20px ;
-    border-bottom-left-radius: 20px ;
-  }
-
-  .image-overlay img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .text-container {
-    position: absolute;
-
-    right: 20px;
-    /* Adjust as needed */
-    transform: translateY(-50%);
-
-    padding: 20px;
-    border-radius: 10px;
-    margin-left: 50%;
-    display: none;
-    /* Initially hidden */
-
-  }
-
-  .swiper-slide:hover .text-container {
-
-    display: block;
-    /* Show on hover */
-    animation: fadeIn 0.2s ease forwards;
-    /* Fade in animation */
-  }
-
-  .text-container h2 {
-    font-family: 'Montserrat';
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-      /* Slide up while fading in */
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
 
 <body>
   <div id="section1" class="first">
@@ -110,8 +24,8 @@
 
         <a href="landinggpage.html" title="home">Home</a>
         <a href="lang.html" title="Language">Language</a>
-        <a href="activity.html" title="Activities">Activities</a>
-        <a href="blog.html" title="Bloc" style="color: #407BFF;">Blog</a>
+        <a href="activity.html" title="Activities" style="color: #407BFF;">Activities</a>
+        <a href="blog.html" title="Bloc">Blog</a>
         <a href="reviewspage.html" title="Reviews">Reviews</a>
         <a href="contactus.html" title="Contactus">Contact us</a>
 
@@ -129,76 +43,66 @@
 
 
   </div>
-  <section id="courses" >
 
-    <div class="swiper mySwiper"style="border-radius: 20px;">
+  <main id="courses">
 
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="image-overlay">
-            <img src="photo/mb.png" alt="h">
-          </div>
-          <div class="text-container">
-            <h2>Evenment</h2>
-            <h3>jeudis de 09:00 à 13:00</h3>
-            <p>
-              📢📢📢MBI Algeria campus a le plaisir de vous annoncer le retour de la
-              "FORMATION APPROFONDIE EN CARDIOLOGIE".🫀🚑🏥 Présentée par Dr. BOUKHARI Ramzi.
-              🕰 Tous les jeudis de 09:00 à 13:00:
-              La formation est constituée de 03 modules:
-              Module 1: ECG en 12H.
-              Module 2: HTA MAPA en 12H.
-              Module 3: Les urgences cardiovasculaires en 12H.
-              ⚜️ Services inclus:
-              • Pause café
-              • Une attestation vous sera délivrée à la fin de la formation
-              Date de début de formation:
-              🗓️jeudi 26 janvier 2023.
-              ❌#places_limitées
-              👉👉👉Pour vous inscrire veuillez remplir le formulaire en cliquant sur le lien ci-dessous👇👇👇
-              https://bit.ly/3GOU9YW
-              Pour plus d'info veuillez nous contacter sur:
-              📞☎️0560 00 11 62/61
-              ou par 📧 e-mail yasmine.tinhinene.djerradi@mbialgeriacampus.com
-              📍 Adresse: 45 avenue Bellout Med Taher, cité Tlidjene, Sétif (MBI Beaumarché).
-
-            </p>
-
+    <section id="blog">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="content-div">
+              <div class="image-overlay">
+                <img src="photo/mbi2.jpg" alt="Event Image">
+              </div>
+              <div class="text-container">
+                <h2>Event</h2>
+                <h3>Thursdays from 09:00 to 13:00</h3>
+                <p>
+                  📢📢📢 MBI Algeria campus is pleased to announce the return of the
+                  "ADVANCED TRAINING IN CARDIOLOGY". 🫀🚑🏥 Presented by Dr. BOUKHARI Ramzi.
+                  🕰 Every Thursday from 09:00 to 13:00:
+                  The training consists of 03 modules:
+                  Module 1: ECG in 12H.
+                  Module 2: HTA MAPA in 12H.
+                  Module 3: Cardiovascular Emergencies in 12H.
+                  ⚜️ Included Services:
+                  • Coffee break
+                  • A certificate will be awarded at the end of the training
+                  Training start date:
+                  🗓️ Thursday, January 26, 2023.
+                  ❌ Limited seats
+                  👉👉👉 To register, please fill out the form by clicking the link below 👇👇👇
+                  https://bit.ly/3GOU9YW
+                  For more info, please contact us at:
+                  📞☎️ 0560 00 11 62/61
+                  or by 📧 email yasmine.tinhinene.djerradi@mbialgeriacampus.com
+                  📍 Address: 45 avenue Bellout Med Taher, cité Tlidjene, Sétif (MBI Beaumarché).
+                </p>
+              </div>
+            </div>
+            
           </div>
         </div>
-
-
-
+        <div class="swiper-pagination"></div>
       </div>
+    </section>
+  </main>
 
-      <div class="swiper-pagination"></div>
-    </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
+  <!-- Initialize Swiper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
         spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
+        loop: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
       });
-    </script>
-
-  </section>
+    });
+  </script>
 
 
 </body>
