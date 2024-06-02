@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="language.css">
@@ -10,20 +12,32 @@
 </head>
 
 <body>
-  <div class="hero">
-    <nav>
-      <img src="logo.png">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#" class="hy">Languages</a></li>
-        <li><a href="#">Activities</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="reviewspage.html">Reviews</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
-      <button> <a href="Sign_in.html">Sign in </a></button>
-      <button><a href="Sign_in.html">Sign up</a></button>
-    </nav>
+  <div id="section1" class="first">
+    <div class="navbar">
+      <div id="logo1">
+        <img src="photo/logo1.png" height="45" width="50" alt="mbi logo">
+      </div>
+      <div class="nav1">
+
+        <a href="landingpage.html" title="home" style="color: #407BFF;">Home</a>
+        <a href="lang.html" title="Language">Language</a>
+        <a href="activity.html" title="Activities">Activities</a>
+        <a href="Blog.html" title="Blog" onclick="scrollToElement()">Blog</a>
+        <a href="reviewspage.html" title="Reviews">Reviews</a>
+        <a href="contactus.html" title="Contactus">Contact us</a>
+
+      </div>
+      <div id="eli">
+
+
+        <a href="" class="button link">Log in</a>
+
+        <a href="sign.html" class="button link">sign in</a>
+
+      </div>
+
+    </div>
+
   </div>
   <div class="line">
     <div class="more-than">
@@ -55,11 +69,11 @@
         </a>
         <h2>
           English
-          <small>Plus de 18 groups</small>
+          <small>more than 10 groups</small>
         </h2>
       </div>
       <div class="card-flap flap1">
-        
+
         <div class="card-flap flap2">
           <div class="card-actions">
             <a href="#" class="btn">Read more</a>
@@ -79,7 +93,7 @@
         </a>
         <h2>
           French
-          <small>plus de 20 groups</small>
+          <small>more than 20 groups</small>
         </h2>
       </div>
       <div class="card-flap flap1">
@@ -105,11 +119,11 @@
         </a>
         <h2>
           Chinese
-          <small>Iso many groups</small>
+          <small>more than 2 groups</small>
         </h2>
       </div>
       <div class="card-flap flap1">
-       
+
         <div class="card-flap flap2">
           <div class="card-actions">
             <a href="#" class="btn">Read more</a>
@@ -118,59 +132,7 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image" src="korian.png" alt="field" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
-        </a>
-        <h2>
-          Korean courses
-          <small>"하늘은 높고 꿈은 크다."
-            Translation: "The sky is high, and the dream is big."</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-       
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image" src="japan.png" alt="water" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
-        </a>
-        <h2>
-          Japanese courses
-          <small>「千里の道も一歩から」
-
-            Translation: "Even a journey of a thousand miles begins with a single step."</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          Japanese is an East Asian language spoken by over 127 million people, primarily in Japan
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+      
     <div class="card">
       <div class="card__image-holder">
         <img class="card__image" src="spanish.png" alt="river" />
@@ -182,11 +144,11 @@
         </a>
         <h2>
           Spanish
-          <small>Image from unsplash.com</small>
+          
         </h2>
       </div>
       <div class="card-flap flap1">
-       
+
         <div class="card-flap flap2">
           <div class="card-actions">
             <a href="#" class="btn">Read more</a>
@@ -195,30 +157,7 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image" src="italy.png" alt="kite" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
-        </a>
-        <h2>
-          Italian courses
-          <small>we can help u learn easly</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
     <!-- <div class="card">
           <div class="card__image-holder">
             <img class="card__image" src="https://source.unsplash.com/300x225/?underwater" alt="underwater" />
@@ -362,8 +301,6 @@
 
 
     <script>
-
-
       $(document).ready(function () {
         var zindex = 10;
         $("div.card").click(function (e) {
@@ -407,91 +344,9 @@
 
         });
       });
-      function showLanguages() {
-        fetch("http://localhost:3000/languages")
-          .then(response => response.json())
-          .then(data => {
-            console.log("languages");
-            console.log(data);
-            const languagesCards = document.getElementById("languages-cards");
-            languagesCards.innerHTML = ""; // Clear the current cards
 
-            // Add each language as a card
-            data.data.languages.forEach(language => {
-              const card = document.createElement("div");
-              card.className = "card";
 
-              const cardImageHolder = document.createElement("div");
-              cardImageHolder.className = "card__image-holder";
-              const img = document.createElement("img");
-              img.className = "card__image";
-              img.src = language.image || "default-image.png"; // Use a default image if none is provided
-              cardImageHolder.appendChild(img);
 
-              const cardTitle = document.createElement("div");
-              cardTitle.className = "card-title";
-              const titleLink = document.createElement("a");
-              titleLink.href = "#";
-              titleLink.className = "toggle-info btn";
-              titleLink.innerHTML = '<span class="left"></span><span class="right"></span>';
-              const title = document.createElement("h2");
-              title.textContent = language.name;
-              const small = document.createElement("small");
-              small.textContent = `More than ${language.groups} groups`;
-              title.appendChild(small);
-
-              cardTitle.appendChild(titleLink);
-              cardTitle.appendChild(title);
-
-              const cardFlap1 = document.createElement("div");
-              cardFlap1.className = "card-flap flap1";
-              const cardFlap2 = document.createElement("div");
-              cardFlap2.className = "card-flap flap2";
-              const cardActions = document.createElement("div");
-              cardActions.className = "card-actions";
-              const readMoreButton = document.createElement("a");
-              readMoreButton.href = "#";
-              readMoreButton.className = "btn";
-              readMoreButton.textContent = "Read more";
-              cardActions.appendChild(readMoreButton);
-              cardFlap2.appendChild(cardActions);
-              cardFlap1.appendChild(cardFlap2);
-
-              card.appendChild(cardImageHolder);
-              card.appendChild(cardTitle);
-              card.appendChild(cardFlap1);
-
-              languagesCards.appendChild(card);
-            });
-
-            // Add click event listeners for the cards
-            var zindex = 10;
-            $("div.card").click(function (e) {
-              e.preventDefault();
-              var isShowing = false;
-              if ($(this).hasClass("show")) {
-                isShowing = true;
-              }
-              if ($("div.cards").hasClass("showing")) {
-                $("div.card.show").removeClass("show");
-                if (isShowing) {
-                  $("div.cards").removeClass("showing");
-                } else {
-                  $(this).css({ zIndex: zindex }).addClass("show");
-                }
-                zindex++;
-              } else {
-                $("div.cards").addClass("showing");
-                $(this).css({ zIndex: zindex }).addClass("show");
-                zindex++;
-              }
-            });
-          })
-          .catch(error => console.error("Error:", error));
-      }
-
-      // Call the function to show the languages
-      showLanguages();
 
     </script>
 </body>

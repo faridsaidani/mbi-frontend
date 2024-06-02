@@ -5,20 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HOME</title>
-  <script type="module" src="reviews.js"></script>
-  <script type="module" src="news.js"></script>
-
   <link rel="icon" type="image/png" href="photo/logo11.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+    
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-
+  <script type="module" src="reviews.js"></script>
+  <script type="module" src="news.js"></script>
   <link rel="stylesheet" href="landingpage.css">
 </head>
 
@@ -32,17 +31,16 @@
 
         <a href="landingpage.html" title="home" style="color: #407BFF;">Home</a>
         <a href="#section2" title="Language">Language</a>
-        <a href="#activitiesSection" title="Activities">Activities</a>
+        <a href="activity.html" title="Activities">Activities</a>
         <a href="#blog1" title="Blog" onclick="scrollToElement()">Blog</a>
-        <a href="#section6" title="Reviews">Reviews</a>
+        <a href="reviewspage.html" title="Reviews">Reviews</a>
         <a href="contactus.html" title="Contactus">Contact us</a>
 
       </div>
       <div id="eli">
 
 
-        <a href="Sign_in.html" class="button link">Log in</a>
-
+        <a href="" class="button link">Log in</a>
         <a href="sign.html" class="button link">sign in</a>
 
       </div>
@@ -77,20 +75,7 @@
 
 
   </div>
-  <div id="section0">
-    <div class="stat">
-      <div></div>
-      <h3>Joined our website</h3>
-    </div>
-    <div class="stat">
-      <div></div>
-      <h3>Professional <br> teachers</h3>
-    </div>
-    <div class="stat">
-      <div></div>
-      <h3>certified students</h3>
-    </div>
-  </div>
+  
   <div id="section2" class="Cources">
 
     <h2>Available Langues !</h2>
@@ -107,47 +92,46 @@
             <div class="card__content">
               <span class="card__title">learn English Easier</span>
 
-              <button class="card__btn">Learn More </button>
+              <button class="card__btn"><a href="lang.html">View More </a></button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="card__image">
-              <img src="photo/enslish.png" alt="card image">
+              <img src="photo/allman.png" alt="card image">
             </div>
 
             <div class="card__content">
-              <span class="card__title">learn English Easier</span>
+              <span class="card__title">leicht deutsch lernen</span>
 
-              <button class="card__btn"><a href="">View More</a></button>
+              <button class="card__btn"><a href="lang.html">View More </a></button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="card__image">
-              <img src="photo/frab" alt="card image">
+              <img src="photo/SvgjsG1008.png" alt="card image">
             </div>
 
             <div class="card__content">
-              <span class="card__title">learn English Easier</span>
+              <span class="card__title">Apprenez le français </span>
 
-              <button class="card__btn">View More</button>
+              <button class="card__btn"><a href="lang.html">View More </a></button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="card__image">
-              <img src="photo/enslish.png" alt="card image">
+              <img src="photo/china.png" alt="card image">
             </div>
 
             <div class="card__content">
-              <span class="card__title">learn English Easier</span>
+              <span class="card__title">日本語を学ぶ施設</span>
 
-              <button class="card__btn">View More</button>
+              <button class="card__btn"><a href="lang.html">View More </a></button>
             </div>
           </div>
 
         </div>
         <div class="swiper-pagination"></div>
       </div>
-
       <!-- Swiper JS -->
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -194,7 +178,7 @@
       });
     });
   </script> <br><br>
-  <div class="theintro">
+  <div class="theintro" style="height: 110vh;">
     <div class="the_textt">
       <h1 id="text">
         <pre id="text"> MBI at your  <br> fingertips </pre>
@@ -220,20 +204,29 @@
 
 
 
-      <section id="anim" class="swiper mySwiperr">
-        <button class="card__btn" style="margin-left: 2%;background-color: #1E1B6D;"><a href="Blog.html">for more Blogs
-            -></a></button>
+      <section id="anim" class="swiper mySwiperr" style="background-color: #1E1B6D">
+        <button class="card__btn" style="margin-left: 2%;background-color: #1E1B6D;"><a href="Blog.html">for more Blogs -></a></button>
         <div id="swiper-wrapperr" class="swiper-wrapper">
-          <div class="image-overlay"><img src="photo/mb.png" alt="h"></div>
-          <div class="cardd swiper-slide">
-            <div class="image-overlay"><img src="photo/mb.png" alt="h"></div>
 
+          <div class="cardd swiper-slide" >
+            <img src="photo/mbi4.jpg" alt="h"  class="idd">
+            
           </div>
-
-
-
+          <div class="cardd swiper-slide" >
+            <img src="photo/mbi2.jpg" alt="h"  class="idd">
+            
+          </div>
+          <div class="cardd swiper-slide" >
+            <img src="photo/mbi3.jpg" alt="h"  class="idd">
+            
+          </div>
+          
+          
+          
+      
+          
         </div>
-
+       
       </section>
 
 
@@ -314,7 +307,7 @@
       </div>
     </div>
     <div class="revnam1">
-      <div class="reviews" id="userreviews">
+      <div class="review">
         <div></div>
       </div>
       <div><button>View More</button></div>

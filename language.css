@@ -1,58 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-.hero{
-    height: 40vh;
-    width: 100%;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 33px;
-    padding-right: 3%;
-
-}
-nav ul li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px 20px ;
-
-}
-nav ul li a {
-    font-weight: bold;
-    color: #1E1B6D;
-    text-decoration: none;
-}
-nav ul li a:hover{
-    color: #493EEB;
-}
-nav a button{ 
-    background-color: #493EEB;
-    color: #f3f3f3;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 30px;
-    font-weight: bold;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-    width: 80px;
-  
-    text-decoration: none;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.navbar {
+  display: flex;
 }
 
-nav a button:hover{
-    background-color:#f3f3f3 ;
-    border: 2px solid #493EEB;
-    color: #493EEB;
+#logo1 {
+  margin: 1% 7%;
 }
+
+.nav1 {
+  width: 70%;
+
+  text-align: center;
+  margin-left: -2.5%;
+  margin-top: 2%;
+}
+
+.nav1 a {
+  font-family: "Montserrat";
+  padding: 3%;
+  font-size: larger;
+  text-decoration: none;
+  color: #1e1b6d;
+}
+
+.nav1 a:hover {
+  color: #493eeb;
+  transition: 0.5s;
+}
+
+#eli {
+  margin-right: 2%;
+  width: 30%;
+}
+
+.button {
+  background-color: #493eeb;
+  border: 2px solid black;
+  border-radius: 30px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6% 3%;
+  cursor: pointer;
+  font-family: "Montserrat";
+}
+
+.button:hover {
+  background-color: #1e1b6d;
+  transition: 0.3s;
+}
+
 .hy{
     color: #493EEB;
 }
