@@ -1,12 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+     box-sizing: border-box; 
     font-family: 'Montserrat', sans-serif;
 }
 .hero{
     height: 40vh;
     width: 100%;
+    background-color: #ffff;
 }
 .hy{
   color: #493EEB;
@@ -38,7 +39,7 @@ nav ul li a {
 nav ul li a:hover{
     color: #493EEB;
 }
-nav button{
+nav a button {
     background-color: #493EEB;
     color: #f3f3f3;
     font-size: 12px;
@@ -55,15 +56,16 @@ body{
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: #f3f3f3;
+  background: #ffff;
 
 }
 .container{
   display: flex;
+  background-color: #ffff;
 }
 .container .ratings{
   position: relative;
-  background: #f1f0f0;
+  background: #f8f8f8;
   padding: 25px 50px 35px;
   border-radius: 25px;
   width: 50%;
@@ -89,8 +91,8 @@ body{
   cursor: pointer;
   transition: color 0.2s ease;
 }
-.stars i .active{
-  color:#1E1B6D;
+.ratings{
+  width: 20%;
 }
 
 .textera{
@@ -135,7 +137,7 @@ body{
   padding: 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 14px;
-  background: #C7DDF1;
+  background: #ffff;
   margin: 20px;
 }
 flex{
@@ -154,3 +156,75 @@ flex{
 .comment-list .user{
   height: 50px ;
 }
+.comment-session{
+  background-color: #fff;
+
+}
+.commentsection{
+  background-color: #C7DDF1;
+  color: #1E1B6D;
+  position: relative;
+  
+  padding: 25px 50px 35px;
+  border-radius: 25px;
+  width: 90%;
+  box-shadow:  rgba(0, 0, 0, 0.05);
+  margin: 20px;
+
+}
+.commentsection .text {
+  display:flex ;
+  margin-left: 5%;
+  color: #1E1B6D;
+
+}
+.commentsection .text .numberrev{
+  margin-left: 35%;
+  color: #1E1B6D;
+}
+.commentsection .infoco div {
+  background-color: #a9c1d7;
+  border-radius: 25px;
+  
+}
+.userinfo{
+  display: flex;
+}
+.userinfo .date p{
+  margin-left: 240px;
+
+}
+.userinfo .username p{
+  margin-left: 20%;
+}
+.comment p{
+  margin-left: 20px;
+
+}
+
+.commentone{
+  margin: 20px;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  font-size: 3em; /* Adjust the font size here for larger stars */
+}
+
+.comment-section2 {
+  max-height: 25vh;
+  max-width: 90%;
+  background-color: #C7DDF1;
+  overflow-y: scroll;
+}
+
+.commentt {
+  height: 100px;
+ 
+  margin: 2%;
+  background-color: #a9c1d7;
+  color: #1E1B6D;
+  border-radius: 20px;
+}
+

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="reviewspage.css">
     <script src="reviewpage.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -13,15 +14,15 @@
         <nav>
             <img src="logo.png">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="landingpage.html">Home</a></li>
                 <li><a href="lang.html" >Languages</a></li>
                 <li><a href="#">Activities</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#" class="hy">Reviews</a></li>
+                <li><a href="reviewspage.html" class="hy">Reviews</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
-            <button>Sign in</button>
-            <button>Sign up</button>
+            <a href="Sign_in.html"><button>Sign in</button></a>
+            <a href="Sign_in.html"><button>Sign up</button></a>
         </nav>
     </div>
 
@@ -30,13 +31,15 @@
         <div class="ratings">
             <header>Share your review</header>
             <p>How satisfied are you with the experience you had ..?</p>
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </div> 
+            
+                <div class="rating" onclick="rate(event)">
+                    <span>&#x2606;</span>
+                    <span>&#x2606;</span>
+                    <span>&#x2606;</span>
+                    <span>&#x2606;</span>
+                    <span>&#x2606;</span>
+                </div>
+          
            
             <p>Do you have any thoughts you’ld like to share ?</p>
             <div class="textera">
@@ -47,47 +50,118 @@
             </div>
         </div>
         <div class="comment-session">
-            <div class="post-comment">
-                   <div class="comment-list">
-                    <div class="flex">
-                        <div class="user">
-                            <div class="user-image">
-                                <div class="user-meta">
-                                    <div class="name">Ali Ahmad</div>
-                                    <div class="day">10 days ago</div>
-                                </div>
-                            </div>
-                            <div class="replay">
-                                <div class="lick icon "><i class="fa-regular fa-thumbs-up"></i></div>
-                                <div class="dislick icon "><i class="fa-regular fa-thumbs-down"></i></div>
-                                <div class="re-comment">replay</div>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            It was a very good experience , i enjoyed alot . I really recommend this school
-                        </div>
-                    </div>
-                    <form action="" class="comment-box">
-                        <div class="user">
-                            <div class="name">Ali Ahmad</div>
-                        </div>
-                        <textarea name="comment" ></textarea>
-                        <button class="comment-submit"></button>
-                    </form>
+            <div  class="revimage">
+                <img src="reviews.png" alt="rev">
+            </div>
+           <div class="commentsection">
+              <div class="text">
+                  <div class="title"><h1>Comments</h1></div>
+                   <div class="numberrev"><p>584 reviews</p></div>
+              </div>
 
-                   </div>
-                   <div class="rev">
-                      568 Reviews
-                  </div>
-             </div>
-              <!-- <div class="comment">
-                  <div class="username">Ali Ahmed</div>
-                  <div class="date">13 March 2024</div>
-                  <p>It was a very good experience , i enjoyed alot . I really
-                    recommend this school</p>
-            </div> -->
-        </div>
+              <main>
+                <div class="comment-section2">
+                    <div class="commentt">
+                        <div class="commentone">
+                            <div class=userinfo>
+                                <div  class="username"><p>Ali Ahmed </p> </div>
+                                <div class="date"><p> March 2024</p></div>
+                            </div>
+                            <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                       </div>
+                    </div>
+                    <div class="commentt">
+                        <div class="commentone">
+                            <div class=userinfo>
+                                <div  class="username"><p>Ali Ahmed </p> </div>
+                                <div class="date"><p> March 2024</p></div>
+                            </div>
+                            <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                       </div>
+                    </div>
+                    <div class="commentt">
+                        <div class="commentone">
+                            <div class=userinfo>
+                                <div  class="username"><p>Ali Ahmed </p> </div>
+                                <div class="date"><p> March 2024</p></div>
+                            </div>
+                            <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                       </div>
+                    </div>
+                    <div class="commentt">
+                        <div class="commentone">
+                            <div class=userinfo>
+                                <div  class="username"><p>Ali Ahmed </p> </div>
+                                <div class="date"><p> March 2024</p></div>
+                            </div>
+                            <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                       </div>
+                    </div>
+                    <div class="commentt">
+                        <div class="commentone">
+                            <div class=userinfo>
+                                <div  class="username"><p>Ali Ahmed </p> </div>
+                                <div class="date"><p> March 2024</p></div>
+                            </div>
+                            <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                       </div>
+                    </div>
+                    <div class="commentt">
+                        <div class="commentone">
+                            <div class=userinfo>
+                                <div  class="username"><p>Ali Ahmed </p> </div>
+                                <div class="date"><p> March 2024</p></div>
+                            </div>
+                            <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                       </div>
+                    </div>
+
+
+
+
+
+
+              <div class="infoco">
+                  <div class="commentone">
+                      <div class=userinfo>
+                          <div  class="username"><p>Ali Ahmed </p> </div>
+                          <div class="date"><p> March 2024</p></div>
+                      </div>
+                      <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+                 </div>
+
+                 <div class="commentone">
+                    <div class=userinfo>
+                        <div  class="username"><p>Ali Ahmed </p> </div>
+                        <div class="date"><p> March 2024</p></div>
+                    </div>
+                    <div class="comment"><p class="the comment">It was a very good experience , i enjoyed alot . I really recommend this school</p></div>
+               </div>
+
+                 
+              </div>
+         </div>
+     </div>
     </div>
     
-</body>
-</html>
+
+    <script>
+        function rate(event) {
+            if (event.target.tagName === 'SPAN') {
+                const stars = document.querySelectorAll('.rating > span');
+                const clickedIndex = Array.from(stars).indexOf(event.target);
+                
+                for (let i = 0; i <= clickedIndex; i++) {
+                    stars[i].innerHTML = '&#x2605;';
+                    stars[i].style.color = '#1E1B6D';
+                }
+                for (let i = clickedIndex + 1; i < stars.length; i++) {
+                    stars[i].innerHTML = '&#x2606;';
+                    stars[i].style.color = 'black';
+                }
+            }
+        }
+        </script>
+       
+        </body>
+        </html>
